@@ -1,0 +1,195 @@
+============================================
+  YOUTUBE DESCARGADOR - INSTRUCCIONES
+============================================
+
+Que hace este programa?
+----------------------
+Descarga videos de YouTube en distintas
+calidades, solo el audio (musica MP3), y
+con subtitulos en el idioma que quieras.
+
+Version: 2.1
+
+
+------------------------------------------------------
+  PASO 1: INSTALAR PYTHON
+------------------------------------------------------
+
+1. Andate a https://python.org
+2. Hace clic en "Downloads" y baja Python
+   (la version mas nueva, ej: 3.14.x)
+3. Abri el instalador
+4. IMPORTANTE: marcar la casilla que dice
+   "Add Python to PATH"
+5. Clic en "Install Now"
+6. Cuando termine, cerra el instalador
+
+
+------------------------------------------------------
+  PASO 2: INSTALAR DEPENDENCIAS
+------------------------------------------------------
+
+1. Abri la carpeta donde estan estos archivos
+2. Hace DOBLE CLIC en "INSTALAR.bat"
+3. Se va a abrir una ventana negra que instala
+   unas cosas, espera a que termine
+4. Cuando diga "Listo!" cerra la ventana
+
+Las dependencias que se instalan:
+  - yt-dlp (motor de descarga)
+  - rich (interfaz visual)
+  - yt-dlp-ejs (resolvedor de desafios de YouTube)
+
+
+------------------------------------------------------
+  PASO 3: INSTALAR NODE.JS (REQUERIDO)
+------------------------------------------------------
+
+Node.js es NECESARIO para descargar de YouTube.
+YouTube usa desafios de JavaScript que requiren Node.
+
+FORMA FACIL - CON WINGET (Windows 10 u 11)
+  1. Abri "Inicio", escribi "cmd"
+  2. Hace clic derecho en "Simbolo del sistema"
+  3. Elegi "Ejecutar como administrador"
+  4. Escribi esto y apreta Enter:
+     winget install OpenJS.NodeJS --accept-package-agreements
+  5. Espera a que termine
+  6. REINICIA la PC para que tome el cambio
+
+FORMA MANUAL
+  1. Anda a https://nodejs.org
+  2. Baja la version LTS
+  3. Instala con las opciones por defecto
+  4. REINICIA la PC
+
+
+------------------------------------------------------
+  PASO 4: (OPCIONAL) INSTALAR FFMPEG
+------------------------------------------------------
+
+FFmpeg es necesario para:
+  - Descargar solo audio (musica en MP3)
+  - Descargar videos en HD (1080p, 4K, etc.)
+  - Embeber subtitulos en el video
+
+Si no queres instalar FFmpeg, el programa igual
+funciona pero sin audio ni HD.
+
+Para instalarlo:
+
+FORMA FACIL - CON WINGET (Windows 10 u 11)
+  1. Abri "Inicio", escribi "cmd"
+  2. Hace clic derecho en "Simbolo del sistema"
+  3. Elegi "Ejecutar como administrador"
+  4. Escribi esto y apreta Enter:
+     winget install FFmpeg --accept-package-agreements
+  5. Espera a que termine
+
+FORMA MANUAL
+  1. Anda a https://ffmpeg.org/download.html
+  2. Baja la version para Windows
+  3. Descomprimi el archivo
+  4. Dentro de la carpeta descomprimida anda a "bin"
+  5. Copia "ffmpeg.exe"
+  6. Pegalo en la misma carpeta donde esta youtube_dl.py
+
+  El programa lo detecta solo. No hace falta hacer
+  nada mas.
+
+
+------------------------------------------------------
+  PASO 5: DESCARGAR VIDEOS
+------------------------------------------------------
+
+1. Hace DOBLE CLIC en "Descargar YouTube.bat"
+2. Se abre el programa con un menu bonito
+3. Pega la URL del video de YouTube y apreta Enter
+4. Te muestra informacion del video y las calidades
+   disponibles
+5. Te pregunta si queres subtitulos (opcional)
+6. Elegi que descargar:
+   1 = Video + Audio (completo)
+   2 = Solo Audio (musica en MP3)
+   3 = Solo Subtitulos
+   0 = Salir
+7. Segui las opciones segun lo que elegiste
+8. Los archivos se guardan en:
+   C:\Users\TU_USUARIO\Downloads\yt-dlp\
+
+
+------------------------------------------------------
+  PASO 6: VIDEOS CON RESTRICCION DE EDAD
+------------------------------------------------------
+
+Si un video tiene restriccion de edad, el programa
+te pedira autenticacion con cookies.
+
+METODO: USAR ARCHIVO COOKIES.TXT (RECOMENDADO)
+
+1. Instala la extension "Get cookies.txt LOCALLY"
+   en tu navegador:
+   - Chrome/Brave/Edge: Busca en Chrome Web Store
+   - Firefox: Busca en Firefox Add-ons
+
+2. Ve a YouTube.com y logueate con tu cuenta
+
+3. Haz clic en el icono de la extension
+
+4. Selecciona "Export" o "Exportar"
+
+5. Guarda el archivo como "cookies.txt" en la
+   misma carpeta donde esta este programa
+
+6. Cuando el programa te pida autenticacion,
+   selecciona "Usar archivo cookies.txt"
+
+IMPORTANTE:
+  - Las cookies se usan solo para autenticarte
+  - No se guardan ni comparten
+  - Si dejan de funcionar, exporta nuevas cookies
+
+
+------------------------------------------------------
+  PREGUNTAS FRECUENTES
+------------------------------------------------------
+
+Q: Se abre y se cierra rapido sin mostrar nada?
+R: Te falta Python o no marcaste "Add Python to PATH".
+   Reinstala Python y marca esa casilla.
+
+Q: "Acceso denegado" o error de permisos?
+R: Los videos se guardan en tu carpeta de Downloads
+   (C:\Users\TU_USUARIO\Downloads\yt-dlp\)
+
+Q: No me descarga audio?
+R: Necesitas FFmpeg. Segui el PASO 4.
+
+Q: Error "page needs to be reloaded"?
+R: Necesitas Node.js. Segui el PASO 3.
+   Tambien puede ser que tus cookies expiraron,
+   exporta nuevas desde tu navegador.
+
+Q: Error "Failed to decrypt with DPAPI"?
+R: No uses la extraccion directa del navegador.
+   Usa el metodo cookies.txt (PASO 6).
+
+Q: Puedo pausar una descarga?
+R: Si, apreta Ctrl+C en la ventana para cancelar.
+
+Q: Funciona con playlists?
+R: Si! Pega la URL de la playlist y el programa te
+   pregunta si queres descargar toda la lista.
+
+Q: En que formato descarga el audio?
+R: MP3. Se puede cambiar en el codigo pero MP3 es
+   el que funciona en todos lados.
+
+Q: Los subtitulos se pueden embeber en el video?
+R: Si! El programa te pregunta si queres embeberlos
+   o descargarlos en archivos .srt separados.
+
+
+============================================
+  Hecho con amor para mis amigos
+============================================

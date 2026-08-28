@@ -1,0 +1,7 @@
+__pycache__/
+Descargas/
+ffmpeg.exe
+ffmpeg-*/
+*.zip
+*.7z
+cookies.txt
